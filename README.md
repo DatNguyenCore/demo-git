@@ -38,7 +38,7 @@ Sự dụng chuyển màn hình.
 
 import React from 'react';                                      // import thư viện react giúp việc tạo DOM ảo.
 import { View, Text } from 'react-native';                      // import thư viện react-native chức các control của ứng dụng.
-import { NavigationContainer } from '@react-navigation/native'; // import thư viện @react-navigation/native tác dụng quản lý dữ liệu, liên kết chuyển trang với                                                                 //      môi trường ứng dụng.
+import { NavigationContainer } from '@react-navigation/native'; // import thư viện @react-navigation/native tác dụng quản lý dữ liệu, liên kết chuyển trang với                                                                 \n//      môi trường ứng dụng.
 import { createStackNavigator } from '@react-navigation/stack'; // import thư viện @react-navigation/stack tạo ra stack quản lý các màn hình
 
 function HomeScreen() {
