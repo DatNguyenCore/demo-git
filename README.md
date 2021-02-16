@@ -1,5 +1,5 @@
 # demo-git
-Các sử dụng git.
+Các sử dụng git cơ bản.
 ============================
 ### Các thao tác cơ bản với git cơ bản.
 - Tạo tài khoản trên github.
