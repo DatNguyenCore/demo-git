@@ -1,7 +1,7 @@
 # demo-git
 Các sử dụng git.
 ============================
-### Các thao tác cơ bản với git.
+### Các thao tác cơ bản với git cơ bản.
 - Tạo tài khoản trên github.
 - Tạo dự án trên remote.
 - Kết nối git local với git remote.
