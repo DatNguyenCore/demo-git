@@ -11,7 +11,7 @@ Các sử dụng git.
 - Đẩy codoe từ local lên server:
   + Lệnh: **git push origin master** (đẩy code lên nhánh master).
   
-Sự dụng chuyển màn hình.
+Sự dụng navigation.
 ============================
 > Chú ý:
 >  + React Native là thư viện có nhiệm vụ xây dựng giao diện của mobile. Vậy nên React Native không có khả năng chuyển giữa các màn hình trong ứng dụng. 
