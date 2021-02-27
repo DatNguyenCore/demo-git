@@ -77,11 +77,14 @@ export default App;
     * **name**: giống như khoá chính giúp phân biệt các màn hình khác nhau trong stask. Nó phải là duy nhất trong các stask.
     * **component**: màn hình.
   + Khi khởi tạo màn hình nào được code ở đầu tiên sẽ ở vị trí trên đỉnh của stask.
-  + để bỏ phần Header trên các màn hình ta có thể tham tham số: **headerShown: false**.
+  + để bỏ phần Header trên các màn hình ta có thể tham số: **headerShown: false**.
   
+ ### Extension hỗi trợ lập trình React Native.
+  - GitLens — Git supercharged: hỗ trợ thao tác với git local bằng giao diện đồ hoạ.
+  - Prettier - Code formatter: hỗ trợ format code javascript.
   
-  
-  
+ ### Hiển thị danh sách sản phẩm bằng control [FlatList](https://reactnative.dev/docs/flatlist).
+ 
   
   
 
