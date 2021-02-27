@@ -1,7 +1,14 @@
 /** @format */
 
 import React from 'react';
-import { View, Text, StyleSheet, TextInput, Image, TouchableOpacity } from 'react-native';
+import {
+	View,
+	Text,
+	StyleSheet,
+	TextInput,
+	Image,
+	TouchableOpacity,
+} from 'react-native';
 
 function Login({ navigation }) {
 	return (
@@ -14,17 +21,18 @@ function Login({ navigation }) {
 				style={[styles.input, styles.username]}
 				placeholder='Username'
 			></TextInput>
-			<TextInput 
-                style={styles.input} placeholder='Password'
-                secureTextEntry
-            ></TextInput>
+			<TextInput
+				style={styles.input}
+				placeholder='Password'
+				secureTextEntry
+			></TextInput>
 
-            <TouchableOpacity 
-                style={styles.btnLogin}
+			<TouchableOpacity
+				style={styles.btnLogin}
 				onPress={() => navigation.navigate('Products')}
-            >
-                <Text style={styles.textLogin}>Login</Text>
-            </TouchableOpacity>
+			>
+				<Text style={styles.textLogin}>Login</Text>
+			</TouchableOpacity>
 		</View>
 	);
 }
@@ -34,7 +42,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#fff'
+		backgroundColor: '#fff',
 	},
 	input: {
 		width: 300,
@@ -51,20 +59,20 @@ const styles = StyleSheet.create({
 		width: 300,
 		resizeMode: 'contain',
 	},
-    btnLogin: {
-        width: 300,
-        height: 40,
-        borderRadius: 7,
-        backgroundColor: '#000',
-        marginTop: 50,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    textLogin: {
-        color: '#fff',
-        fontSize: 17,
-        fontWeight: 'bold'
-    }
+	btnLogin: {
+		width: 300,
+		height: 40,
+		borderRadius: 7,
+		backgroundColor: '#000',
+		marginTop: 50,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	textLogin: {
+		color: '#fff',
+		fontSize: 17,
+		fontWeight: 'bold',
+	},
 });
 
 export default Login;
