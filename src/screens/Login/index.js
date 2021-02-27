@@ -8,32 +8,36 @@ import {
 	TextInput,
 	Image,
 	TouchableOpacity,
+	TouchableWithoutFeedback,
+	Keyboard,
 } from 'react-native';
 
 function Login({ navigation }) {
 	return (
-		<View style={styles.waper}>
-			<Image
-				source={require('../../imgs/logo.png')}
-				style={styles.image}
-			></Image>
-			<TextInput
-				style={[styles.input, styles.username]}
-				placeholder='Username'
-			></TextInput>
-			<TextInput
-				style={styles.input}
-				placeholder='Password'
-				secureTextEntry
-			></TextInput>
+		<TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+			<View style={styles.waper}>
+				<Image
+					source={require('../../imgs/logo.png')}
+					style={styles.image}
+				></Image>
+				<TextInput
+					style={[styles.input, styles.username]}
+					placeholder='Username'
+				></TextInput>
+				<TextInput
+					style={styles.input}
+					placeholder='Password'
+					secureTextEntry
+				></TextInput>
 
-			<TouchableOpacity
-				style={styles.btnLogin}
-				onPress={() => navigation.navigate('Products')}
-			>
-				<Text style={styles.textLogin}>Login</Text>
-			</TouchableOpacity>
-		</View>
+				<TouchableOpacity
+					style={styles.btnLogin}
+					onPress={() => navigation.navigate('Products')}
+				>
+					<Text style={styles.textLogin}>Login</Text>
+				</TouchableOpacity>
+			</View>
+		</TouchableWithoutFeedback>
 	);
 }
 
