@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	View,
 	Text,
@@ -10,9 +10,31 @@ import {
 	TouchableOpacity,
 	TouchableWithoutFeedback,
 	Keyboard,
+	Alert
 } from 'react-native';
+import Users from '../../services/Users';
 
 function Login({ navigation }) {
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+
+	const handleLogin = () => {
+		if(username.trim() === '') {
+			return Alert.alert('Trường tài khoản không được để trống');
+		}
+
+		if(password.trim() === '') {
+			return Alert.alert('Trường mật khẩu không được để trống');
+		}
+
+		if(username !== Users.username || password !== Users.password) {
+			return Alert.alert('Tài khoản hoặc mật khẩu không đúng');
+		}
+
+		navigation.navigate('Products');
+	}
+
+
 	return (
 		<TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
 			<View style={styles.waper}>
@@ -23,16 +45,18 @@ function Login({ navigation }) {
 				<TextInput
 					style={[styles.input, styles.username]}
 					placeholder='Username'
+					onChangeText={(text) => setUsername(text)}
 				></TextInput>
 				<TextInput
 					style={styles.input}
 					placeholder='Password'
 					secureTextEntry
+					onChangeText={(text) => setPassword(text)}
 				></TextInput>
 
 				<TouchableOpacity
 					style={styles.btnLogin}
-					onPress={() => navigation.navigate('Products')}
+					onPress={handleLogin}
 				>
 					<Text style={styles.textLogin}>Login</Text>
 				</TouchableOpacity>
