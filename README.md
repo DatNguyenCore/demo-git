@@ -1,7 +1,7 @@
 # demo-git
-Các sử dụng git.
+Các sử dụng git cơ bản.
 ============================
-### Các thao tác cơ bản với git.
+### Các thao tác cơ bản với git cơ bản.
 - Tạo tài khoản trên github.
 - Tạo dự án trên remote.
 - Kết nối git local với git remote.
@@ -11,7 +11,7 @@ Các sử dụng git.
 - Đẩy codoe từ local lên server:
   + Lệnh: **git push origin master** (đẩy code lên nhánh master).
   
-Sự dụng chuyển màn hình.
+Sự dụng navigation.
 ============================
 > Chú ý:
 >  + React Native là thư viện có nhiệm vụ xây dựng giao diện của mobile. Vậy nên React Native không có khả năng chuyển giữa các màn hình trong ứng dụng. 
@@ -38,13 +38,22 @@ Sự dụng chuyển màn hình.
 
 import React from 'react';                                      // import thư viện react giúp việc tạo DOM ảo.
 import { View, Text } from 'react-native';                      // import thư viện react-native chức các control của ứng dụng.
-import { NavigationContainer } from '@react-navigation/native'; // import thư viện @react-navigation/native tác dụng quản lý dữ liệu, liên kết chuyển trang với                                                                 //      môi trường ứng dụng.
+import { NavigationContainer } from '@react-navigation/native'; // import thư viện @react-navigation/native tác dụng quản lý dữ liệu,
+                                                                // liên kết chuyển trang với môi trường ứng dụng.
 import { createStackNavigator } from '@react-navigation/stack'; // import thư viện @react-navigation/stack tạo ra stack quản lý các màn hình
 
 function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
+    </View>
+  );
+}
+
+function DetailScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Detail Screen</Text>
     </View>
   );
 }
@@ -56,6 +65,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>     // stack container
         <Stack.Screen name="Home" component={HomeScreen} /> // các màn hình tương ứng từng ngăn xếp trong stack.
+        <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
