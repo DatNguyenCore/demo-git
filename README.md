@@ -84,6 +84,53 @@ export default App;
   - Prettier - Code formatter: hỗ trợ format code javascript.
   
  ### Hiển thị danh sách sản phẩm bằng control [FlatList](https://reactnative.dev/docs/flatlist).
+ - Thuộc tính cơ bản của FlatList.
+    + **data**: nhận vào mảng cung cấp dữ liệu cho danh sách.
+    + **keyExtractor**: nhận vào một hàm xác định key của từng phần tử trong danh sách.
+    + **renderItem**: nhận vào một hàm chịu trách nghiệm trả về giao diện của từng Item trong danh sách.
+```
+function ItemList({ data }) {
+	return (
+		<TouchableOpacity onPress={() => Alert.alert('Buy')}>
+			<View style={styles.container}>
+				<View style={styles.containerImage}>
+					<Image
+						style={styles.image}
+						source={{
+							uri: data.thumbImage,
+						}}
+					></Image>
+				</View>
+				<View style={styles.content}>
+					<Text style={styles.header} numberOfLines={2}>
+						{data.name}
+					</Text>
+					<Text style={styles.price}>
+						Price: {moneyFormat(data.price)}
+					</Text>
+					<Text>Colour: {data.colour}</Text>
+				</View>
+			</View>
+		</TouchableOpacity>
+	);
+}
+
+function Products({ navigation }) {
+	return (
+		<View style={styles.waper}>
+			<Header
+				title='Products'
+			></Header>
+			<FlatList
+				data={data}
+				keyExtractor={(item) => item.id}
+				renderItem={({ item }) => <ItemList data={item}></ItemList>}
+			></FlatList>
+		</View>
+	);
+}
+```
+
  
   
   
