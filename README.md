@@ -77,11 +77,61 @@ export default App;
     * **name**: giống như khoá chính giúp phân biệt các màn hình khác nhau trong stask. Nó phải là duy nhất trong các stask.
     * **component**: màn hình.
   + Khi khởi tạo màn hình nào được code ở đầu tiên sẽ ở vị trí trên đỉnh của stask.
-  + để bỏ phần Header trên các màn hình ta có thể tham tham số: **headerShown: false**.
+  + để bỏ phần Header trên các màn hình ta có thể tham số: **headerShown: false**.
   
+ ### Extension hỗi trợ lập trình React Native.
+  - GitLens — Git supercharged: hỗ trợ thao tác với git local bằng giao diện đồ hoạ.
+  - Prettier - Code formatter: hỗ trợ format code javascript.
   
-  
-  
+ ### Hiển thị danh sách sản phẩm bằng control [FlatList](https://reactnative.dev/docs/flatlist).
+ - Thuộc tính cơ bản của FlatList.
+    + **data**: nhận vào mảng cung cấp dữ liệu cho danh sách.
+    + **keyExtractor**: nhận vào một hàm xác định key của từng phần tử trong danh sách.
+    + **renderItem**: nhận vào một hàm chịu trách nghiệm trả về giao diện của từng Item trong danh sách.
+```
+function ItemList({ data }) {
+	return (
+		<TouchableOpacity onPress={() => Alert.alert('Buy')}>
+			<View style={styles.container}>
+				<View style={styles.containerImage}>
+					<Image
+						style={styles.image}
+						source={{
+							uri: data.thumbImage,
+						}}
+					></Image>
+				</View>
+				<View style={styles.content}>
+					<Text style={styles.header} numberOfLines={2}>
+						{data.name}
+					</Text>
+					<Text style={styles.price}>
+						Price: {moneyFormat(data.price)}
+					</Text>
+					<Text>Colour: {data.colour}</Text>
+				</View>
+			</View>
+		</TouchableOpacity>
+	);
+}
+
+function Products({ navigation }) {
+	return (
+		<View style={styles.waper}>
+			<Header
+				title='Products'
+			></Header>
+			<FlatList
+				data={data}
+				keyExtractor={(item) => item.id}
+				renderItem={({ item }) => <ItemList data={item}></ItemList>}
+			></FlatList>
+		</View>
+	);
+}
+```
+
+ 
   
   
 
