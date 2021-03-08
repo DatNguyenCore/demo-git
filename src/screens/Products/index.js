@@ -22,9 +22,11 @@ function moneyFormat(price, sign = 'VND') {
 	return sign + ' ' + pieces.join('');
 }
 
-function ItemList({ data }) {
+function ItemList({ navigation, data }) {
 	return (
-		<TouchableOpacity onPress={() => Alert.alert('Buy')}>
+		<TouchableOpacity onPress={() => navigation.navigate('ProductDetail', {
+			idProduct: data.id
+		})}>
 			<View style={styles.container}>
 				<View style={styles.containerImage}>
 					<Image
@@ -51,13 +53,13 @@ function ItemList({ data }) {
 function Products({ navigation }) {
 	return (
 		<View style={styles.waper}>
-			<Header
-				title='Products'
-			></Header>
+			<Header title='Products'></Header>
 			<FlatList
 				data={data}
 				keyExtractor={(item) => item.id}
-				renderItem={({ item }) => <ItemList data={item}></ItemList>}
+				renderItem={({ item }) => (
+					<ItemList navigation={navigation} data={item}></ItemList>
+				)}
 			></FlatList>
 		</View>
 	);
