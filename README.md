@@ -77,7 +77,8 @@ export default App;
     * **name**: giống như khoá chính giúp phân biệt các màn hình khác nhau trong stask. Nó phải là duy nhất trong các stask.
     * **component**: màn hình.
   + Khi khởi tạo màn hình nào được code ở đầu tiên sẽ ở vị trí trên đỉnh của stask.
-  + để bỏ phần Header trên các màn hình ta có thể tham số: **headerShown: false**.
+  + Để bỏ phần Header trên các màn hình ta có thể tham số: **headerShown: false**.
+  + Truyền dữ liệu từ màn hình này qua màn hình khác thông quan navigation. Ta sử dụng tới tham số thứ 2 của hàm [navigation.navigate](https://reactnavigation.org/docs/params).
   
  ### Extension hỗi trợ lập trình React Native.
   - GitLens — Git supercharged: hỗ trợ thao tác với git local bằng giao diện đồ hoạ.
