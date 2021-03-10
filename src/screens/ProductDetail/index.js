@@ -27,8 +27,6 @@ function ProductDetail({ navigation, route }) {
     const [number, setNumber] = useState(0);
 	const product = Products.filter((item) => item.id === idProduct)[0];
 
-	console.log('product', product);
-
     const handleAddProduct = () => {
         setNumber(state => state + 1);
     }
